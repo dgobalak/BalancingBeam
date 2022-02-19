@@ -1,23 +1,39 @@
-#include <Servo.h>
-
-Servo myservo;  // create servo object to control a servo
-// twelve servo objects can be created on most boards
-
-int pos = 0;    // variable to store the servo position
+const int pingPin = 7; // Trigger Pin of Ultrasonic Sensor
+const int echoPin = 6; // Echo Pin of Ultrasonic Sensor
 
 void setup() {
-  myservo.attach(11);  // attaches the servo on pin 11 to the servo object
-  myservo.write(0);
+   Serial.begin(9600); // Starting Serial Terminal
+   pinMode(pingPin, OUTPUT);    
+   pinMode(echoPin, INPUT);
+}
+
+bool sendPing() {
+  digitalWrite(pingPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(pingPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(pingPin, LOW);  
+  return true;
 }
 
 void loop() {
-  for (pos = 0; pos <= 180; pos += 1) { // goes from 0 degrees to 180 degrees
-    // in steps of 1 degree
-    myservo.write(pos);              // tell servo to go to position in variable 'pos'
-    delay(5);                       // waits 15 ms for the servo to reach the position
-  }
-  for (pos = 180; pos >= 0; pos -= 1) { // goes from 180 degrees to 0 degrees
-    myservo.write(pos);              // tell servo to go to position in variable 'pos'
-    delay(5);                       // waits 15 ms for the servo to reach the position
-  }
+   long duration, inches, cm;
+   sendPing();
+   duration = pulseIn(echoPin, HIGH);
+   inches = microsecondsToInches(duration);
+   cm = microsecondsToCentimeters(duration);
+   Serial.print(inches);
+   Serial.print("in, ");
+   Serial.print(cm);
+   Serial.print("cm");
+   Serial.println();
+   delay(100);
+}
+
+long microsecondsToInches(long microseconds) {
+   return microseconds / 74.0 / 2.0;
+}
+
+long microsecondsToCentimeters(long microseconds) {
+   return microseconds / 29.0 / 2.0;
 }
