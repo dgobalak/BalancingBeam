@@ -8,7 +8,7 @@ const int echoPin = 7; // Echo Pin of Ultrasonic Sensor
 const int servoPin = 10;
 
 const int START_DEG = 0;
-const long BEAM_LEN = 50.0;
+const long BEAM_LEN = 52.0;
 
 const long MIN_TARGET_CHANGE = 2; // cm
 
