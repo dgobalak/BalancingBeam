@@ -53,7 +53,7 @@
 
 ### Overview
 
-We've built a self-balancing beam that can keep a ping pong ball stable. We've added a ton of cool features. For example, we use computer vision to allow users to wirelessly move the ball by waving a highlighter around. We've also used an IMU and LCD display to present different measurements, such as the tilt of the beam.
+We've built a self-balancing beam that can keep a ping pong ball stable. We've added a ton of cool features. For example, we use computer vision to allow users to wirelessly move the ball by waving a highlighter around. We've also used an IMU and LCD display to present different measurements, such as the tilt of the beam. Our 3D models can be found here: https://drive.google.com/file/d/17BHHV_UWzsNVTqSeSDMvVyPJD1ICHhzd/view.
 <br>
 <br>
 
