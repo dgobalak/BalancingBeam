@@ -10,7 +10,7 @@ const int servoPin = 10;
 const int START_DEG = 0;
 const long BEAM_LEN = 52.0;
 
-const long MIN_TARGET_CHANGE = 2; // cm
+const long MIN_TARGET_CHANGE = 5; // cm
 
 double Kp = 2, Ki = 5, Kd = 1;
 double dist, setPoint;
@@ -20,7 +20,8 @@ PID pid(&dist, &angle, &setPoint, Kp, Ki, Kd, DIRECT);
 
 void setup() {
   servoSetup(servo, servoPin);  
-  
+
+//  Ultrasonic setup
   Serial.begin(115200);
   pinMode(pingPin, OUTPUT);    
   pinMode(echoPin, INPUT);

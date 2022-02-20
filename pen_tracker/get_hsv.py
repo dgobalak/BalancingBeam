@@ -1,8 +1,10 @@
+# Script for hetting the hsv values of the pink highlighter
+# Source: https://medium.com/programming-fever/draw-using-a-virtual-pen-on-a-computer-screen-using-opencv-in-python-71d3a1d5902b
+
+
 import cv2
 import numpy as np
 import time
-
-# Source: https://medium.com/programming-fever/draw-using-a-virtual-pen-on-a-computer-screen-using-opencv-in-python-71d3a1d5902b
 
 def nothing(x):
     pass
