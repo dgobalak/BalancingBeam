@@ -23,7 +23,7 @@ cap.set(3, CAPTURE_WIDTH)
 cap.set(4, CAPTURE_HEIGHT)
 
 kernel = np.ones((5, 5), np.uint8)
-x, y = 0
+x, y = 0, 0
 noiseth = 800
 
 arduino = serial.Serial(port='COM4', baudrate=115200, timeout=.1)
@@ -63,16 +63,24 @@ def get_target_dist():
         set_point = BEAM_LEN // 2
 
     def abs_diff(x): return abs(x - set_point)
-    set_point = int(min(BALANCE_DISTS, key=abs_diff))
+    set_point_final = int(min(BALANCE_DISTS, key=abs_diff))
 
-    return set_point
+    return set_point, set_point_final
 
 
 def main():
+    counts = {k: 0 for k in BALANCE_DISTS}
     while 1:
-        set_point = get_target_dist()
-        print(set_point)
-        write_data(set_point)
+        set_point, set_point_final = get_target_dist()
+        counts[set_point_final] += 1
+
+        # if counts[set_point_final] > 20:
+        #     write_data(set_point_final)
+        #     break
+
+        print(set_point, set_point_final)
+
+    print("Place Ball Now")
 
     cv2.destroyAllWindows()
     cap.release()

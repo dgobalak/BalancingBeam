@@ -12,9 +12,11 @@ const long BEAM_LEN = 52.0;
 
 const long MIN_TARGET_CHANGE = 5; // cm
 
-double Kp = 2, Ki = 5, Kd = 1;
+double Kp = 8, Ki = 0.02, Kd = 4000;
 double dist, setPoint;
 double angle;
+
+bool calibrated = false;
 
 PID pid(&dist, &angle, &setPoint, Kp, Ki, Kd, DIRECT);
 
@@ -28,18 +30,26 @@ void setup() {
 
 //   Get current distance to ping pong ball
   getCurrDist(dist);
-  setPoint = BEAM_LEN / 2;  
+  setPoint = BEAM_LEN;  
 
   pid.SetMode(AUTOMATIC);
 }
 
 void loop() {
-  if (Serial.available() > 0) {;
-    double newTarget = (double)Serial.parseFloat();
-    if (abs(newTarget - setPoint) > MIN_TARGET_CHANGE) {
-      setPoint = newTarget;
-    }
+//  while (!calibrated) {
+//    if (Serial.available() > 0) {;
+//      int num = Serial.parseInt();
+//      setPoint = (double)num;
+//      delay(100);
+//      calibrated  = true;
+//    }
+//  }
+
+  if (dist < 20) {
+    moveServo(servo, 180);
   }
+
+  calibrated = true;
   pid.Compute();
   moveServo(servo, (int)angle);
   getCurrDist(dist);
