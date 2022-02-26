@@ -1,23 +1,26 @@
-# MakeUofTProject
+# PID-Controlled Beam
 
 <!-- PROJECT LOGO -->
 <p align="center">
-  <a href="https://github.com/dgobalak/MakeUofTProject"></a>
+  <a href="https://github.com/dgobalak/BalancingBeam"></a>
 
-  <h3 align="center">MakeUofT Project</h3>
+  <h3 align="center">PID-Controlled Beam</h3>
 
   <p align="center">
-    A beam that self-balances to keep a ping pong ball stable. Is it useful? No. But it's super cool.
+    A beam that self-balances to keep a ping pong ball stable. Is it useful? Probably not. But at least it's cool.
     <br />
-    <a href="https://github.com/dgobalak/MakeUofTProject"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/dgobalak/BalancingBeam"><strong>Explore the docs »</strong></a>
     <br>
-    <a href="https://github.com/dgobalak/MakeUofTProject/issues">Report Bug</a>
+    <a href="https://github.com/dgobalak/BalancingBeam/issues">Report Bug</a>
     ·
-    <a href="https://github.com/dgobalak/MakeUofTProject/issues">Request Feature</a>
+    <a href="https://github.com/dgobalak/BalancingBeam/issues">Request Feature</a>
 </p>
 </p>
 
-
+<p align="center">
+   <img src="demo.gif" width="400" height="400" style="display: block; margin: 0 auto;"/>
+   <p align="center">Demo of the project.</p>
+</p>
 
 <!-- TABLE OF CONTENTS -->
 <summary>
@@ -48,12 +51,10 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-<!-- 
-[![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
 ### Overview
 
-We've built a self-balancing beam that can keep a ping pong ball stable. We've added a ton of cool features. For example, we use computer vision to allow users to wirelessly move the ball by waving a highlighter around. We've also used an IMU and LCD display to present different measurements, such as the tilt of the beam. Our 3D models can be found here: https://drive.google.com/file/d/17BHHV_UWzsNVTqSeSDMvVyPJD1ICHhzd/view.
+We've built a self-balancing beam that can keep a ping pong ball stable. We've added a ton of cool features. For example, we use computer vision to allow users to wirelessly move the ball by waving a highlighter around. We've also used an IMU and LCD display to present different measurements, such as the tilt of the beam.
 <br>
 <br>
 
@@ -88,7 +89,7 @@ To get a local copy up and running, follow these simple steps.
 ## Contact
 
 * Daniel Gobalakrishnan - dgobalak@uwaterloo.ca
-* Project Link: [https://file-insights.herokuapp.com](https://file-insights.herokuapp.com)
+* Project Link: [https://devpost.com/software/project-7tl8vw](https://devpost.com/software/project-7tl8vw)
 
 
 
