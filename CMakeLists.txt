@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.19)
+project(BalancingBeam)
+
+set(CMAKE_CXX_STANDARD 14)
+
+include_directories(fw_beam)
+
+add_executable(BalancingBeam
+        fw_beam/fw_beam.ino
+        fw_beam/lp_filter.cpp
+        fw_beam/lp_filter.h
+        fw_beam/servo_handler.cpp
+        fw_beam/servo_handler.h
+        fw_beam/ultrasonic_handler.cpp
+        fw_beam/ultrasonic_handler.h)
