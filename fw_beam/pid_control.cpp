@@ -15,20 +15,20 @@ PIDController::PIDController(double kp, double ki, double kd, double dt, double 
     this->last_time = millis();
 }
 
-bool PIDController::calculate(double *input) {
+bool PIDController::calculate(double *input, double *response) {
     unsigned long current_time = millis();
     unsigned long dt_ms = current_time - this->last_time;
     if (dt_ms >= this->dt ) {
-        double error = this->target - *input;
+        double error = this->target - *response;
 
         double proportional = error * this->kp;
         this->integral += error * this->dt * this->ki;
         double derivative = ( (*input - this->last_input) / this->dt ) * this->kd;
 
+        *input = proportional + this->integral + derivative;
+
         this->last_time = current_time;
         this->last_input = *input;
-
-        *input = proportional + this->integral + derivative;
         return true;
     }
     return false;
