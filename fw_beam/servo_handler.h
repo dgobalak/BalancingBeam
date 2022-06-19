@@ -4,8 +4,8 @@
 #include <stdint.h>
 
 #define INITIAL_ANGLE 90
-#define SERVO_MIN_DELAY_US 544
-#define SERVO_MAX_DELAY_US 2400
+#define SERVO_MIN_DELAY_US 1000
+#define SERVO_MAX_DELAY_US 2000
 
 class ServoHandler {
 private:

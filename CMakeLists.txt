@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.19)
 project(BalancingBeam)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
 include_directories(fw_beam)
 
@@ -12,4 +12,6 @@ add_executable(BalancingBeam
         fw_beam/servo_handler.cpp
         fw_beam/servo_handler.h
         fw_beam/ultrasonic_handler.cpp
-        fw_beam/ultrasonic_handler.h)
+        fw_beam/ultrasonic_handler.h
+        fw_beam/pid_control.cpp
+        fw_beam/pid_control.h)

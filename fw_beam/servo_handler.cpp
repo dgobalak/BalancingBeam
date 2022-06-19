@@ -24,11 +24,11 @@ void ServoHandler::move(uint16_t angle) {
 }
 
 void ServoHandler::move_pwm(uint16_t angle) {
-    uint32_t delay_us = map(angle, angle_min, angle_max, SERVO_MIN_DELAY_US, SERVO_MAX_DELAY_US);
+    uint32_t delay_us = map(angle, this->angle_min, this->angle_max, SERVO_MIN_DELAY_US, SERVO_MAX_DELAY_US);
     for (uint16_t i = this->curr_angle; i < angle; i++) {
-        digitalWrite(servo_pin, HIGH);
+        digitalWrite(this->servo_pin, HIGH);
         delayMicroseconds(delay_us);
-        digitalWrite(servo_pin, LOW);
+        digitalWrite(this->servo_pin, LOW);
         delay(10);
     }
     this->curr_angle = angle;
