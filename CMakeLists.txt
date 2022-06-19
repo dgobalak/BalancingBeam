@@ -14,4 +14,8 @@ add_executable(BalancingBeam
         fw_beam/ultrasonic_handler.cpp
         fw_beam/ultrasonic_handler.h
         fw_beam/pid_control.cpp
-        fw_beam/pid_control.h)
+        fw_beam/pid_control.h
+        fw_beam/mpu6050.cpp
+        fw_beam/mpu6050.h
+        fw_beam/lcd_screen.cpp
+        fw_beam/lcd_screen.h)
