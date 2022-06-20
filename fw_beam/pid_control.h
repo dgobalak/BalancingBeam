@@ -14,7 +14,7 @@ private:
     double out_min;
     double out_max;
     unsigned long last_time;
-    double last_input;
+    double last_error;
 public:
     PIDController(double kp, double ki, double kd, double dt, double target, double out_min, double out_max);
     bool calculate(uint16_t *input, double *response);

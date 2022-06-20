@@ -7,11 +7,11 @@ PIDController::PIDController(double kp, double ki, double kd, double dt, double 
     this->ki = ki;
     this->kd = kd;
     this->integral = 0;
-    this->last_input = 0;
     this->dt = dt;
     this->target = target;
     this->out_min = out_min;
     this->out_max = out_max;
+    this->last_error = 0;
     this->last_time = millis();
 }
 
@@ -22,13 +22,13 @@ bool PIDController::calculate(uint16_t *input, double *response) {
         double error = this->target - *response;
 
         double proportional = error * this->kp;
-        this->integral += error * this->dt * this->ki;
-        double derivative = ( (*input - this->last_input) / this->dt ) * this->kd;
+        this->integral += ( error * this->dt ) * this->ki;
+        double derivative = ( (error - this->last_error) / this->dt ) * this->kd;
 
         *input = proportional + this->integral + derivative;
 
         this->last_time = current_time;
-        this->last_input = *input;
+        this->last_error = error;
         return true;
     }
     return false;
