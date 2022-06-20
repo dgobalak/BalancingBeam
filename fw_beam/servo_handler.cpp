@@ -1,8 +1,8 @@
 #include "servo_handler.h"
 
 #include <stdlib.h>
-#include <Arduino.h>
 #include <stdint.h>
+#include <Arduino.h>
 
 ServoHandler::ServoHandler(uint8_t pin, int16_t angle_min, int16_t angle_max) {
     this->servo_pin = pin;

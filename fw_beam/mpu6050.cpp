@@ -1,7 +1,6 @@
 #include "mpu6050.h"
 
 #include <Wire.h>
-#include <Arduino.h>
 #include <stdint.h>
 
 MPU6050::MPU6050() {

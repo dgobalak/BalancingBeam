@@ -15,7 +15,7 @@ PIDController::PIDController(double kp, double ki, double kd, double dt, double 
     this->last_time = millis();
 }
 
-bool PIDController::calculate(double *input, double *response) {
+bool PIDController::calculate(uint16_t *input, double *response) {
     unsigned long current_time = millis();
     unsigned long dt_ms = current_time - this->last_time;
     if (dt_ms >= this->dt ) {

@@ -1,7 +1,7 @@
 #include "ultrasonic_handler.h"
 
-#include <Arduino.h>
 #include <stdint.h>
+#include <Arduino.h>
 
 UltrasonicHandler::UltrasonicHandler(uint8_t trigger_pin, uint8_t echo_pin) {
     this->trigger_pin = trigger_pin;
