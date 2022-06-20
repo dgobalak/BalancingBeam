@@ -14,7 +14,7 @@
     <a href="https://github.com/dgobalak/BalancingBeam/issues">Report Bug</a>
     ·
     <a href="https://github.com/dgobalak/BalancingBeam/issues">Request Feature</a>
-</p>
+  </p>
 </p>
 
 <p align="center">
@@ -41,10 +41,7 @@
     <li><a href="#installation-and-setup">Installation</a></li>
     </ul>
 </li>
-<li><a href="#contributing">Contributing</a></li>
-<li><a href="#license">License</a></li>
 <li><a href="#contact">Contact</a></li>
-<li><a href="#acknowledgements">Acknowledgements</a></li>
 </ol>
 
 
@@ -54,51 +51,45 @@
 
 ### Overview
 
-We've built a self-balancing beam that can keep a ping pong ball stable. We've added a ton of cool features. For example, we use computer vision to allow users to wirelessly move the ball by waving a highlighter around. We've also used an IMU and LCD display to present different measurements, such as the tilt of the beam.
+This project is a PID-controlled beam that self-balances to keep a ping pong ball stable. I tried to limit the use of 
+Arduino libraries to keep the code as simple as possible, as well as make it relatively easy to port to other platforms.
 <br>
 <br>
 
 ### Built With
 
-* Python
+* C++
 * Arduino
-* OpenCV
-* SOLIDWORKS
+* SolidWorks
 * 3D Printing
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To get a local copy up and running, follow these simple steps.
-
 ### Prerequisites
+* Arduino IDE
+* SolidWorks
+* 3D Printer
+* Arduino Mega 2560 (or another Arduino board)
 
-* Verify if python (Version >= 3.10) is installed. Previous versions may also work.
+### Installation
+To get a local copy up and running, follow these simple steps:
+
+* Clone the repository
   ```sh
-  python --version
+  git clone git@github.com:dgobalak/BalancingBeam.git
   ```
-  * If not, go to https://www.python.org/downloads.
-  <br><br>
-
-* Verify if pip is installed
-  ```sh
-  pip --version
-  ```
-
+* Open the fw_beam Arduino sketch in your Arduino IDE
+* Upload the fw_beam sketch to your Arduino Mega 2560
+  * You can use other Arduino boards, but you may need to re-assign the pins in the fw_beam sketch
+  
 <!-- CONTACT -->
 ## Contact
 
 * Daniel Gobalakrishnan - dgobalak@uwaterloo.ca
 * Project Link: [https://devpost.com/software/project-7tl8vw](https://devpost.com/software/project-7tl8vw)
 
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-* <div>HSV calculation script was obtained from <a href="https://medium.com/programming-fever/draw-using-a-virtual-pen-on-a-computer-screen-using-opencv-in-python-71d3a1d5902b">[www.flaticon.com](https://medium.com/programming-fever/draw-using-a-virtual-pen-on-a-computer-screen-using-opencv-in-python-71d3a1d5902b)</a></div>
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
+[comment]: <> (<!-- MARKDOWN LINKS & IMAGES -->)
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/github_username/repo.svg?style=for-the-badge
 [contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
