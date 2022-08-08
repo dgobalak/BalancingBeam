@@ -12,5 +12,10 @@ LpFilter::LpFilter(double alpha) {
 
 double LpFilter::get_filtered_value(double value) {
   this->filtered_value = this->alpha * value + (1 - this->alpha) * this->filtered_value;
+
+#if defined(LP_FILTER_DEBUG) || defined(SYS_DEBUG)
+  Serial.println("LP Filter: " + String(value) + " -> " + String(filtered_value));
+#endif
+  
   return this->filtered_value;
 }

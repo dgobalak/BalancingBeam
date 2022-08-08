@@ -8,12 +8,12 @@ private:
     double kp;
     double ki;
     double kd;
-    unsigned long dt;
-    unsigned long integral;
+    float dt;
+    double integral;
     double target;
     double out_min;
     double out_max;
-    unsigned long last_time;
+    double last_time;
     double last_error;
 public:
     PIDController(double kp, double ki, double kd, double dt, double target, double out_min, double out_max);

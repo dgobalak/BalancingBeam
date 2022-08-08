@@ -69,7 +69,18 @@ bool MPU6050::read_all_data(int16_t *acc_x, int16_t *acc_y, int16_t *acc_z, int1
         *gyro_x = (int16_t)((data[6] << 8) | data[7]);
         *gyro_y = (int16_t)((data[8] << 8) | data[9]);
         *gyro_z = (int16_t)((data[10] << 8) | data[11]);
-        *temp = ( (int16_t)((data[12] << 8) | data[13]) / 340.0f + 36.53f );        
+        *temp = ( (int16_t)((data[12] << 8) | data[13]) / 340.0f + 36.53f );      
+
+#if defined(MPU6050_DEBUG) || defined(SYS_DEBUG)
+        Serial.print("aX = "); Serial.print(this->convert_int16_to_str(acc_x));
+        Serial.print(" | aY = "); Serial.print(this->convert_int16_to_str(acc_y));
+        Serial.print(" | aZ = "); Serial.print(this->convert_int16_to_str(acc_z));
+        Serial.print(" | tmp = "); Serial.print(temp);
+        Serial.print(" | gX = "); Serial.print(this->convert_int16_to_str(gyro_x));
+        Serial.print(" | gY = "); Serial.print(this->convert_int16_to_str(gyro_y));
+        Serial.print(" | gZ = "); Serial.print(this->convert_int16_to_str(gyro_z));
+        Serial.println();
+#endif
         return true;
     }
     return false;

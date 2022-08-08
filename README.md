@@ -17,11 +17,6 @@
   </p>
 </p>
 
-<p align="center">
-   <img src="demo.gif" width="400" height="400" style="display: block; margin: 0 auto;"/>
-   <p align="center">Demo of the project.</p>
-</p>
-
 <!-- TABLE OF CONTENTS -->
 <summary>
 <h2 style="display: inline-block">Table of Contents</h2></summary>

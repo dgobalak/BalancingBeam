@@ -26,6 +26,10 @@ void ServoHandler::move(uint16_t angle) {
 void ServoHandler::move_pwm(uint16_t angle) {
     uint32_t delay_us = map(angle, this->angle_min, this->angle_max, SERVO_MIN_DELAY_US, SERVO_MAX_DELAY_US);
 
+#if defined(SERVO_DEBUG) || defined(SYS_DEBUG)
+    Serial.println("PWM delay of " + String(delay_us) + "us for " + String(angle) + " degree angle.");
+#endif
+    
     if (this->curr_angle > angle) {
         for (uint16_t i = this->curr_angle; i > angle; i--) {
             digitalWrite(this->servo_pin, HIGH);

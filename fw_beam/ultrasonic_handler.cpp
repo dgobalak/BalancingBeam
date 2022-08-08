@@ -26,9 +26,9 @@ double UltrasonicHandler::get_distance_cm() {
 
     this->distance = pulseIn(this->echo_pin, HIGH) * 0.034 / 2;
 
-    #ifdef DEBUG
-    Serial.println(String(this->distance) + " cm");
-    #endif
+#if defined(ULTRASONIC_DEBUG) || defined(SYS_DEBUG)
+    Serial.println("Raw Distance: " + String(this->distance) + " cm");
+#endif
 
     return this->distance;
 }
