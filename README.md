@@ -7,7 +7,7 @@
   <h3 align="center">PID-Controlled Beam</h3>
 
   <p align="center">
-    A beam that self-balances to keep a ping pong ball stable. Is it useful? Probably not. But at least it's cool.
+    A beam that self-balances to keep a ping pong ball stable.
     <br />
     <a href="https://github.com/dgobalak/BalancingBeam"><strong>Explore the docs »</strong></a>
     <br>
